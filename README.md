@@ -1,9 +1,12 @@
-보일러 템플릿
+https://velog.io/@leehyunho2001/CRA-명령어-없이-React18-TypeScript-Webpack
+https://ryuhojin.tistory.com/19
 
-js
+https://zigsong.github.io/2021/07/11/fe-babel-webpack/
 
-react
+https://ye-yo.github.io/react/2022/05/10/webpack-build.html
 
-ts
+https://velog.io/@ggombee/eslint
 
-ts-react
+https://baeharam.netlify.app/posts/lint/Lint-ESLint-+-Prettier-설정하기
+
+https://cocoze.tistory.com/108
