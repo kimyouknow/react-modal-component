@@ -31,4 +31,8 @@ module.exports = {
     new ReactRefreshWebpackPlugin(),
     // new BundleAnalyzerPlugin(),
   ],
+  resolve: {
+    alias: { '@': path.resolve(__dirname, '../src/') },
+    extensions: ['.js', '.jsx', '.css', '.json'],
+  },
 };
