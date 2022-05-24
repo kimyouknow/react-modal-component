@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 // webpack.common.js
 const path = require('path');
 
@@ -11,13 +13,13 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src'),
     },
-    extensions: ['.js', '.jsx', '.css'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
   },
-  entry: `${path.resolve(__dirname, '../src')}/index.js`,
+  entry: `${path.resolve(__dirname, '../src')}/index.tsx`,
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/,
       },
@@ -31,8 +33,4 @@ module.exports = {
     new ReactRefreshWebpackPlugin(),
     // new BundleAnalyzerPlugin(),
   ],
-  resolve: {
-    alias: { '@': path.resolve(__dirname, '../src/') },
-    extensions: ['.js', '.jsx', '.css', '.json'],
-  },
 };
