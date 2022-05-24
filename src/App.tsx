@@ -1,12 +1,8 @@
-import React from 'react';
 import Card from '@/components/Card';
+import React from 'react';
 
-export default function App() {
-  const a = 0;
-  return (
-    <div>
-      App
-      <Card />
-    </div>
-  );
+function App() {
+  return <Card content="project" msg="start" />;
 }
+
+export default App;

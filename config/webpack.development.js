@@ -23,6 +23,11 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        test: /\.(ts|tsx|js|jsx)$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.(sa|sc|c)ss$/i,
         use: ['style-loader', 'css-loader', 'file-loader'],
       },

@@ -3,7 +3,8 @@
 // webpack.production.js
 const path = require('path');
 
-// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { merge } = require('webpack-merge');
 
@@ -21,10 +22,29 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        test: /\.(ts|tsx|js|jsx)$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.(sa|sc|c)ss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
   plugins: [new MiniCssExtractPlugin()],
+  optimization: {
+    usedExports: true,
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({ terserOptions: { compress: { drop_console: true } } }),
+      new CssMinimizerPlugin(),
+    ],
+    splitChunks: { chunks: 'all' },
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
 });

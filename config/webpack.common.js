@@ -17,13 +17,7 @@ module.exports = {
   },
   entry: `${path.resolve(__dirname, '../src')}/index.tsx`,
   module: {
-    rules: [
-      {
-        test: /\.(ts|tsx|js|jsx)$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
-      },
-    ],
+    rules: [],
   },
   plugins: [
     new HtmlWebpackPlugin({
