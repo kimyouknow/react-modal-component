@@ -4,7 +4,7 @@ type ReturnProps = [boolean, () => void, Dispatch<SetStateAction<boolean>>];
 
 const useToggle = (initialMode: boolean): ReturnProps => {
   const [isToggleOn, setIsToggleOn] = useState(initialMode);
-  const handleToggle = () => setIsToggleOn(prev => !prev);
+  const handleToggle = () => setIsToggleOn((prev: boolean) => !prev);
   return [isToggleOn, handleToggle, setIsToggleOn];
 };
 
