@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { ReactNode } from 'react';
 
 import Potal from './Portal';
-
-const S = require('./style.module.css');
+import * as S from './style';
 
 interface Props {
   children: ReactNode;
@@ -16,12 +14,12 @@ function WindowModal({ children, show, handleOpenModal }: Props) {
   }
   return (
     <Potal>
-      <div onClick={handleOpenModal}>
-        <div onClick={event => event.stopPropagation()}>
-          <button onClick={handleOpenModal}>&times;</button>
+      <S.ModalWrapper onClick={handleOpenModal}>
+        <S.ModalContainer onClick={event => event.stopPropagation()}>
+          <S.CloseModalButton onClick={handleOpenModal}>&times;</S.CloseModalButton>
           {children}
-        </div>
-      </div>
+        </S.ModalContainer>
+      </S.ModalWrapper>
     </Potal>
   );
 }
