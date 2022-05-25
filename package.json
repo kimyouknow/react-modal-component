@@ -1,14 +1,21 @@
 {
-  "name": "react-boiler-template",
-  "version": "1.0.0",
+  "name": "@kimyouknow/react-ts-modal",
+  "private": false,
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.development.js",
     "prod": "webpack-dev-server --config config/webpack.production.js",
     "build:dev": "webpack --config config/webpack.development.js",
     "build:prod": "webpack --config config/webpack.production.js",
-    "lint": "npx eslint --init"
+    "lint": "npx eslint --init",
+    "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
   "repository": {
     "type": "git",
@@ -22,7 +29,8 @@
   "homepage": "https://github.com/kimyouknow/react-boiler-template#readme",
   "dependencies": {
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -33,6 +41,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
+    "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "babel-loader": "^8.2.5",
@@ -62,7 +71,16 @@
     "webpack-dev-server": "^4.9.0",
     "webpack-merge": "^5.8.0"
   },
-  "browserslist": [
-    "ie 11"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
