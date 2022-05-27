@@ -1,9 +1,10 @@
 {
   "name": "@kimyouknow/react-ts-modal",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "babel": {
     "presets": [
       "@babel/preset-react"
@@ -15,7 +16,8 @@
     "build:dev": "webpack --config config/webpack.development.js",
     "build:prod": "webpack --config config/webpack.production.js",
     "lint": "npx eslint --init",
-    "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
+    "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files",
+    "build": "rm -rf ./dist && mkdir dist && tsc dist/lib/*.ts"
   },
   "repository": {
     "type": "git",

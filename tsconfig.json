@@ -4,9 +4,10 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "declaration": true,
     "outDir": "./dist",
     "target": "es5",
-    "module": "esnext",
+    "module": "commonjs",
     "jsx": "react-jsx",
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
