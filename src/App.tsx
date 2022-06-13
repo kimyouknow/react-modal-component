@@ -1,4 +1,4 @@
-import LoginModal from '@/lib/LoginModal';
+import ExampleModal from '@/ExampleModal';
 import useToggle from '@/lib/useToggle';
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <button onClick={handleOpenModal}>로그인 모달</button>
-      <LoginModal isModalOpen={isModalOpen} handleOpenModal={handleOpenModal} />
+      <ExampleModal isOpen={isModalOpen} onClose={handleOpenModal} />
     </div>
   );
 }
