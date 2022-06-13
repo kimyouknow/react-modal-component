@@ -4,9 +4,12 @@
     "es2021": true
   },
   "extends": [
+    "airbnb-typescript",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -14,10 +17,45 @@
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "import", "@typescript-eslint"],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "@typescript-eslint/no-var-require": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-undef": "off",
+    "import/no-unresolved": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-use-before-define": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", ["parent", "sibling"], "index"],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }
