@@ -1,6 +1,6 @@
 {
   "name": "react-boiler-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "prod": "webpack-dev-server --config webpack/webpack.production.js",
     "build:dev": "webpack --config webpack/webpack.development.js",
     "build:prod": "webpack --config webpack/webpack.production.js",
-    "lint": "npx eslint --init"
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",
