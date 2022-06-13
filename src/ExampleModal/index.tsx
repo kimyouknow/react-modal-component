@@ -1,4 +1,6 @@
-import Modal, { ModalProps } from '@/lib/Modal';
+import Modal from '@/lib/Modal';
+
+import * as S from './style';
 
 interface ExampleModalProps {
   isOpen: boolean;
@@ -7,7 +9,7 @@ interface ExampleModalProps {
 
 export default function ExampleModal({ isOpen, onClose }: ExampleModalProps) {
   return (
-    <Modal wrapperId={'example'} isOpen={isOpen} onClose={onClose}>
+    <Modal wrapperId={'example'} isOpen={isOpen} onClose={onClose} customStyle={S.Modal}>
       ExampleModal
     </Modal>
   );
