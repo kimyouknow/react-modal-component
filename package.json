@@ -1,5 +1,5 @@
 {
-  "name": "react-boiler-template",
+  "name": "react-ts-modal",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
@@ -8,18 +8,19 @@
     "prod": "webpack-dev-server --config webpack/webpack.production.js",
     "build:dev": "webpack --config webpack/webpack.development.js",
     "build:prod": "webpack --config webpack/webpack.production.js",
-    "publish": "npm publish --access=public"
+    "build:publish": "rm -rf ./dist && mkdir dist && tsc --project tsconfig-lib.json",
+    "publish": "npm publish --access-allow"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kimyouknow/react-boiler-template.git"
+    "url": "git+https://github.com/kimyouknow/react-modal-component.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kimyouknow/react-boiler-template/issues"
+    "url": "https://github.com/kimyouknow/react-modal-component/issues"
   },
-  "homepage": "https://github.com/kimyouknow/react-boiler-template#readme",
+  "homepage": "https://github.com/kimyouknow/react-modal-component#readme",
   "dependencies": {
     "@types/styled-components": "^5.1.25",
     "react": "^18.1.0",
