@@ -1,13 +1,12 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
-// webpack.production.js
 const path = require('path');
 
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
 const { merge } = require('webpack-merge');
 
+const styledComponentsTransformer = createStyledComponentsTransformer();
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -23,7 +22,12 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(ts|tsx|js|jsx)$/,
-        use: 'babel-loader',
+        use: {
+          loader: 'ts-loader',
+          options: {
+            getCustomTransformers: () => ({ before: [styledComponentsTransformer] }),
+          },
+        },
         exclude: /node_modules/,
       },
       {

@@ -1,23 +1,14 @@
 {
-  "name": "@kimyouknow/react-ts-modal",
-  "private": false,
-  "version": "0.0.6",
+  "name": "react-boiler-template",
+  "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
+  "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.development.js",
-    "prod": "webpack-dev-server --config webpack.production.js",
-    "build:dev": "webpack --config webpack.development.js",
-    "build:prod": "webpack --config webpack.production.js",
-    "lint": "npx eslint --init",
-    "build:publish": "rm -rf ./dist && mkdir dist && tsc --project tsconfig-lib.json",
-    "publish": "npm publish --access-allow"
+    "dev": "webpack-dev-server --config webpack/webpack.development.js",
+    "prod": "webpack-dev-server --config webpack/webpack.production.js",
+    "build:dev": "webpack --config webpack/webpack.development.js",
+    "build:prod": "webpack --config webpack/webpack.production.js",
+    "lint": "npx eslint --init"
   },
   "repository": {
     "type": "git",
@@ -30,8 +21,10 @@
   },
   "homepage": "https://github.com/kimyouknow/react-boiler-template#readme",
   "dependencies": {
+    "@types/styled-components": "^5.1.25",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-refresh": "^0.13.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
@@ -43,7 +36,6 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
-    "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "babel-loader": "^8.2.5",
@@ -67,22 +59,14 @@
     "terser-webpack-plugin": "^5.3.1",
     "ts-loader": "^9.3.0",
     "typescript": "^4.6.4",
+    "typescript-plugin-styled-components": "2.0.0",
     "webpack": "^5.72.1",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0",
     "webpack-merge": "^5.8.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    "ie 11"
+  ]
 }
