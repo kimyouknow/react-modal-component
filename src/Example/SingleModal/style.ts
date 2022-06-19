@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const Modal = {
+export const SingleModal = {
   overlay: css`
     position: fixed;
     left: 0;
