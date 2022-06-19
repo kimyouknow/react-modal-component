@@ -1,5 +1,5 @@
 import ExampleModal from '@/ExampleModal';
-import useToggle from '@/lib/useToggle';
+import useToggle from '@/lib/hooks/useToggle';
 
 function App() {
   const [isModalOpen, handleOpenModal] = useToggle(false);
