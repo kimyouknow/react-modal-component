@@ -13,3 +13,5 @@ export default function PopUp({ parentComponent, children, isOpen, onClose }: Po
   if (!isOpen) return null;
   return <S.Container>{children}</S.Container>;
 }
+
+// 여러 parent등록 가능하게

@@ -1,33 +1,13 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
-
 import PopUp from '@/Example/PopUp';
 import SingleModal from '@/Example/SingleModal';
-import { useToggle } from '@/lib';
+import { useToggle, usePopup } from '@/lib';
 
 import * as S from './style';
 
 export default function Example() {
-  const parent = useRef() as MutableRefObject<HTMLDivElement>;
   const [isModalOpen, handleOpenModal] = useToggle(false);
 
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const handleModalClick = (event: MouseEvent) => {
-    for (const element of event.composedPath()) {
-      if (element === parent.current) return;
-    }
-    setIsPopupOpen(false);
-  };
-
-  const openPopUp = () => setIsPopupOpen(true);
-
-  useEffect(() => {
-    window.addEventListener('click', handleModalClick, true);
-
-    return () => {
-      window.removeEventListener('click', handleModalClick, true);
-    };
-  }, [parent]);
+  const [parent, isPopupOpen, openPopUp, handleModalClick] = usePopup(false);
 
   return (
     <S.Conatiner>
