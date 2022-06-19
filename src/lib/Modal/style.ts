@@ -15,7 +15,6 @@ export const defaultStyle = {
     z-index: 1012;
     position: relative;
     border-radius: 6px;
-    user-select: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
