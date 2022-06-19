@@ -5,7 +5,7 @@ function App() {
   const [isModalOpen, handleOpenModal] = useToggle(false);
   return (
     <div>
-      <button onClick={handleOpenModal}>로그인 모달</button>
+      <button onClick={handleOpenModal}>ExampleModal</button>
       <ExampleModal isOpen={isModalOpen} onClose={handleOpenModal} />
     </div>
   );
