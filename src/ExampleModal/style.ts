@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
 export const Modal = {
   overlay: css`
@@ -11,20 +11,21 @@ export const Modal = {
     background-color: 'rgba(255, 255, 255, 0.75)';
   `,
   content: css`
-    display: inline-block;
     z-index: 1012;
     position: relative;
     border-radius: 6px;
-    user-select: none;
     background: #ffffff;
     border-radius: 40px;
     border: 1px solid black;
     box-shadow: 0px 4px 10px rgba(51, 51, 51, 0.1), 0px 0px 4px rgba(51, 51, 51, 0.05);
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
-    top: 200px;
-    left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 493px;
     height: 364px;
   `,
